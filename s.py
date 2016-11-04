@@ -9,8 +9,11 @@ while True:
 		data = conn.recv(1024)
 		n=n+1
 		if not data: break
+		print('data')
+		print(n)
 		if data == 'close':break
 		conn.send(data)
 	conn.close()
+	print('close')
 	if n == 11:break
 print('end')	
