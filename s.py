@@ -6,15 +6,11 @@ n=0
 print('start')
 while True:
 	conn, addr = s.accept()
-	while True:
-		data = conn.recv(1024)
-		n=n+1
-		if not data: break
-		print('data')
-		print(n)
-		if data == 'close':break
-		conn.send(data)
-	conn.close()
-	print('close')
+	data = conn.recv(1024)
+	n=n+1
+	print('data')
+	print(n)
+	if data == 'close':conn.close()
+	conn.send(data)
 	if n > 11:break
 print('end')	
