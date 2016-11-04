@@ -16,5 +16,5 @@ while True:
 		conn.send(data)
 	conn.close()
 	print('close')
-	if n == 11:break
+	if n > 11:break
 print('end')	
